@@ -10,11 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 import com.squareup.picasso.Picasso
-
-abstract class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
+class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
 
     private var newsList: List<News>? = null
-    abstract var listener: ItemClickListener?
+    private var listener: ItemClickListener?
 
     constructor(newsList: List<News>, listener: ItemClickListener?) {
         this.newsList = newsList
