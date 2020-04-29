@@ -13,7 +13,7 @@ class Database {
         postUrls.add("https://inbusiness.kz/ru/images/original/25/images/bxYftxTH.jpg")
         postUrls.add("https://vokrugsveta.ua/wp-content/uploads/2019/01/shutterstock_1041429496.jpg")
 
-        avaUrls.add("https://news.rambler.ru/img/2019/04/16113359.564446.4150.jpg")
+        avaUrls.add("https://www.infox.ru/photo/91d/7b0/91d7b00a160479ade52e858f16a44c39asdasdasd5de46aaa5cec79.49647512-650x433-91d7b00a160479ade52e858f16a44c39.jpg")
         avaUrls.add("https://static.caravan.kz/image/landscape/420/502516.jpg")
         avaUrls.add("https://uralpolit.ru/assets/911113a0/images/oldsite/2013/04/124924759-pic4-452x302-83269.jpeg/680.jpeg")
         avaUrls.add("https://the-criminal.ru/wp-content/uploads/2017/09/1-18-e1506086292344.jpg")

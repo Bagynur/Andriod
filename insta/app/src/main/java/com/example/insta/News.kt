@@ -21,8 +21,8 @@ class News : Parcelable {
     constructor(
             postData: String,
             author: String,
-            title: String,
             viewsCount: String,
+            title: String,
             commentsCount: String,
             photoLink: String,
             ava: String
@@ -69,17 +69,16 @@ class News : Parcelable {
 
     }
 
-    protected constructor(in: Parcel) {
-        this.author = in.readString()
-        this.title = in.readString()
-        this.viewsCount = in.readString()
-        this.commentsCount = in.readString()
+    private constructor(parcel: Parcel) {
+        this.author = parcel.readString()
+        this.title = parcel.readString()
+        this.viewsCount = parcel.readString()
+        this.commentsCount = parcel.readString()
 
-        this.ava = in.readString()
-        this.postPhoto = in.readInt()
-        this.postData = in.readString()
-
-        this.photoLink = in.readString()
+        this.ava = parcel.readString()
+        this.postPhoto = parcel.readInt()
+        this.postData = parcel.readString()
+        this.photoLink = parcel.readString()
     }
 
 //    companion object {
@@ -98,9 +97,9 @@ class News : Parcelable {
 //    }
 
     companion object CREATOR : Parcelable.Creator<News> {
-        override fun createFromParcel(parcel: Parcel): News {
-            return News(parcel)
-        }
+            override fun createFromParcel(parcel: Parcel): News {
+                return News(parcel)
+            }
 
         override fun newArray(size: Int): Array<News?> {
             return arrayOfNulls(size)

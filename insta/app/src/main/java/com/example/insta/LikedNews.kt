@@ -15,7 +15,6 @@ import android.widget.Toast
 
 import java.util.ArrayList
 
-
 class LikedNews : Fragment {
     private var likedItems: List<News>
     private var recyclerView2: RecyclerView? = null
