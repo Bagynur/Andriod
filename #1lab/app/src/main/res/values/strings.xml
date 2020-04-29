@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">#1lab</string>
+    <string name="Button">Переподключить</string>
+    <string name="checkBox">Обновить</string>
+    <string name="button2">Button2</string>
+    <string name="button1">Войти</string>
+    <string name="Create">Создать аккаунт</string>
+    <string name="name">Введите адрес электронной почты</string>
+    <string name="zabpass">Забыли пароль?</string>
+    <string name="vhodgoogle">Последний способ входа: Google</string>
+    <string name="StorAcc">Войти через сторонний аккаунт</string>
+    <string name="mi">Mi аккаунт</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+</resources>
