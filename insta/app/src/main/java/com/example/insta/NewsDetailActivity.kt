@@ -3,7 +3,9 @@ package com.example.insta
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.text.Html
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -12,13 +14,13 @@ import com.squareup.picasso.Picasso
 class NewsDetailActivity : AppCompatActivity() {
 
     private val tvNewsDetail: TextView? = null
-    private var nickname: TextView? = null
-    private var likes: TextView? = null
-    private var title: TextView? = null
-    private var comments: TextView? = null
-    private var postData: TextView? = null
-    private var ava: ImageView? = null
-    private var postPhoto: ImageView? = null
+    private lateinit var nickname: TextView
+    private lateinit var likes: TextView
+    private lateinit var title: TextView
+    private lateinit var comments: TextView
+    private lateinit var postData: TextView
+    private lateinit var ava: ImageView
+    private lateinit var postPhoto: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,22 +30,22 @@ class NewsDetailActivity : AppCompatActivity() {
 
 
 
-        nickname = findViewById<View>(R.id.tvDate)
-        likes = findViewById<View>(R.id.tvViews)
+        nickname = findViewById(R.id.tvDate)
+        likes = findViewById(R.id.tvViews)
         title = findViewById(R.id.tvTitle)
-        comments = findViewById<View>(R.id.tvComments)
-        postData = findViewById<View>(R.id.postData)
-        ava = findViewById<View>(R.id.imageView3)
-        postPhoto = findViewById<View>(R.id.imageButton)
+        comments = findViewById(R.id.tvComments)
+        postData = findViewById(R.id.postData)
+        ava = findViewById(R.id.imageView3)
+        postPhoto = findViewById(R.id.imageButton)
 
         val selectedNews = intent.getParcelableExtra<Parcelable>("news") as News
 
 
-        nickname!!.text = Html.fromHtml(selectedNews.author)
-        likes!!.text = selectedNews.viewsCount
-        title!!.text = Html.fromHtml(selectedNews.title)
-        comments!!.text = selectedNews.commentsCount
-        postData!!.text = selectedNews.postData
+        nickname.text = Html.fromHtml(selectedNews.author)
+        likes.text = selectedNews.viewsCount
+        title.text = Html.fromHtml(selectedNews.title)
+        comments.text = selectedNews.commentsCount
+        postData.text = selectedNews.postData
 
         Picasso.get().load(selectedNews.ava).into(ava)
         Picasso.get().load(selectedNews.photoLink).into(postPhoto)

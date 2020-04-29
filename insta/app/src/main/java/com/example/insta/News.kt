@@ -69,31 +69,41 @@ class News : Parcelable {
 
     }
 
-    protected constructor(`in`: Parcel) {
-        this.author = `in`.readString()
-        this.title = `in`.readString()
-        this.viewsCount = `in`.readString()
-        this.commentsCount = `in`.readString()
+    protected constructor(in: Parcel) {
+        this.author = in.readString()
+        this.title = in.readString()
+        this.viewsCount = in.readString()
+        this.commentsCount = in.readString()
 
-        this.ava = `in`.readString()
-        this.postPhoto = `in`.readInt()
-        this.postData = `in`.readString()
+        this.ava = in.readString()
+        this.postPhoto = in.readInt()
+        this.postData = in.readString()
 
-        this.photoLink = `in`.readString()
+        this.photoLink = in.readString()
     }
 
-    companion object {
+//    companion object {
+//
+//        val CREATOR: Parcelable.Creator<News> = object : Parcelable.Creator<News> {
+//            override fun createFromParcel(source: Parcel): News {
+//
+//                return News(source)
+//            }
+//
+//            override fun newArray(size: Int): Array<News> {
+//
+//                return arrayOfNulls(size)
+//            }
+//        }
+//    }
 
-        val CREATOR: Parcelable.Creator<News> = object : Parcelable.Creator<News> {
-            override fun createFromParcel(source: Parcel): News {
+    companion object CREATOR : Parcelable.Creator<News> {
+        override fun createFromParcel(parcel: Parcel): News {
+            return News(parcel)
+        }
 
-                return News(source)
-            }
-
-            override fun newArray(size: Int): Array<News> {
-
-                return arrayOfNulls(size)
-            }
+        override fun newArray(size: Int): Array<News?> {
+            return arrayOfNulls(size)
         }
     }
 }

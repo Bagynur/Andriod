@@ -17,9 +17,11 @@ import java.util.ArrayList
 
 
 class LikedNews : Fragment {
+    private var likedItems: List<News>
     private var recyclerView2: RecyclerView? = null
     private var adapter2: NewsListAdapter? = null
-    //    private Database db2 = new Database();
+    //        private Database db2 = new Database();
+    private lateinit var database:Database
     private var myContext: FragmentActivity? = null
     private var listener2: NewsListAdapter.ItemClickListener? = null
 
@@ -94,8 +96,9 @@ class LikedNews : Fragment {
 
 
     override fun onAttach(context: Context) {
-        myContext = context as FragmentActivity
         super.onAttach(context)
+        myContext = context as FragmentActivity
+//        super.onAttach(context)
     }
 
     companion object {
@@ -112,5 +115,9 @@ class LikedNews : Fragment {
      *
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
+
+}
+
+fun <E> List<E>.remove(item: E) {
 
 }

@@ -14,12 +14,12 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 
-abstract class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity()  {
     private var recyclerView: RecyclerView? = null
-    abstract var buttonLike: Button
+    lateinit var buttonLike: Button
     internal var moreText: Button? = null
-    abstract var button_home: Button
-    abstract var button_man: Button
+    lateinit var button_home: Button
+    lateinit var button_man: Button
 
 
     private var adapter: NewsListAdapter? = null
@@ -97,7 +97,6 @@ abstract class MainActivity : AppCompatActivity() {
 
 
     }
-
     fun buttonLiked(target: View) {
         Toast.makeText(baseContext, "LIKED_POSTS!!!", Toast.LENGTH_SHORT).show()
         val fragment = LikedNews(Database.likedNews)
@@ -121,4 +120,8 @@ abstract class MainActivity : AppCompatActivity() {
     companion object {
         var db = Database()
     }
+}
+
+private fun <E> List<E>.add(item: E) {
+
 }
